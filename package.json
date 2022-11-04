@@ -1,0 +1,55 @@
+{
+  "name": "@joejordan/vite-frontend-template",
+  "version": "0.1.0",
+  "author": "Joe Jordan <github@ignitesoft.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joejordan/vite-frontend-template.git"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.14",
+    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
+    "@types/node": "^18.11.9",
+    "@types/prettier": "^2.7.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.26.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.2",
+    "vitest": "^0.24.5"
+  },
+  "scripts": {
+    "build": "vite build",
+    "start": "vite dev",
+    "format": "prettier --write .",
+    "lint:format": "prettier --cache --check .",
+    "lint": "eslint --cache .",
+    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
+    "tsc:check": "tsc",
+    "vitest:run": "vitest run"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}

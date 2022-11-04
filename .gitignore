@@ -1,0 +1,13 @@
+# folders
+/node_modules/
+coverage/
+dist/
+
+# files
+.eslintcache
+.pnpm-debug.log
+tsconfig.tsbuildinfo
+
+# environment variable files
+.env
+.env.test
