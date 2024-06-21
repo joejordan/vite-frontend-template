@@ -7,7 +7,7 @@ const Link = (props: JSX.IntrinsicElements['a']) => (
 
 export default function App() {
   return (
-    <div className="mx-auto text-center my-8 mt-10 w-8/12 rounded border border-gray-200 p-4 shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-none">
+    <div className="mx-auto my-8 mt-10 w-8/12 rounded border border-gray-200 p-4 text-center shadow-md dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-none">
       <h1 className="mb-4 text-4xl">Welcome</h1>
       <p className="my-4">
         <em>Minimal, fast, sensible defaults.</em>

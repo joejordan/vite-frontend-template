@@ -8,8 +8,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
@@ -27,7 +27,8 @@
     "files": true,
     "compilerOptions": {
       "module": "esnext",
-      "isolatedModules": false
+      "isolatedModules": false,
+      "allowImportingTsExtensions": true
     }
   }
 }
