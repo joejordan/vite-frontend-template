@@ -3,9 +3,10 @@
   "include": [
     "src/**/*",
     ".eslintrc.cjs",
+    "vite.config.ts",
     "**/*.ts",
     "**/*.js",
     "**/*.cjs",
-    "**/*.mjs",
+    "**/*.mjs"
   ]
 }
