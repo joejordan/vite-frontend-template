@@ -5,4 +5,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'unicorn/prevent-abbreviations': 'off',
   },
+  parserOptions: {
+    project: './tsconfig.eslint.json',
+  },
 };

@@ -1,4 +1,5 @@
 const Link = (props: JSX.IntrinsicElements['a']) => (
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
   <a
     className="text-yellow-500 underline hover:no-underline dark:text-yellow-400"
     {...props}
