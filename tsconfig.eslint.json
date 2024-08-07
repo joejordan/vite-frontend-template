@@ -2,8 +2,10 @@
   "extends": "./tsconfig.json",
   "include": [
     "src/**/*",
-    ".eslintrc.cjs",
-    "vite.config.ts",
+    "*.mjs",
+    "*.cjs",
+    "*.js",
+    "*.ts",
     "**/*.ts",
     "**/*.js",
     "**/*.cjs",

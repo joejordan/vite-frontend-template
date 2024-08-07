@@ -1,10 +1,11 @@
-const Link = (props: JSX.IntrinsicElements['a']) => (
-  // eslint-disable-next-line jsx-a11y/anchor-has-content
-  <a
-    className="text-yellow-500 underline hover:no-underline dark:text-yellow-400"
-    {...props}
-  />
-);
+function Link(props: JSX.IntrinsicElements['a']) {
+  return (
+    <a
+      className="text-yellow-500 underline hover:no-underline dark:text-yellow-400"
+      {...props}
+    />
+  );
+}
 
 export default function App() {
   return (
@@ -14,16 +15,28 @@ export default function App() {
         <em>Minimal, fast, sensible defaults.</em>
       </p>
       <p className="my-4">
-        Using <Link href="https://vitejs.dev/">Vite</Link>,{' '}
-        <Link href="https://reactjs.org/">React</Link>,{' '}
-        <Link href="https://www.typescriptlang.org/">TypeScript</Link> and{' '}
-        <Link href="https://tailwindcss.com/">Tailwind</Link>.
+        Using
+        {' '}
+        <Link href="https://vitejs.dev/">Vite</Link>
+        ,
+        {' '}
+        <Link href="https://reactjs.org/">React</Link>
+        ,
+        {' '}
+        <Link href="https://www.typescriptlang.org/">TypeScript</Link>
+        {' '}
+        and
+        {' '}
+        <Link href="https://tailwindcss.com/">Tailwind</Link>
+        .
       </p>
       <p className="my-4">
-        Change{' '}
+        Change
+        {' '}
         <code className="border-1 2py-1 rounded border border-yellow-500 bg-neutral-100 px-1 font-mono text-yellow-500 dark:border-yellow-400 dark:bg-neutral-700 dark:text-yellow-400">
           src/App.tsx
-        </code>{' '}
+        </code>
+        {' '}
         for live updates.
       </p>
     </div>
