@@ -1,6 +1,6 @@
 {
   "name": "@joejordan/vite-frontend-template",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Joe Jordan <github@ignitesoft.com>",
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "eslint-plugin-format": "^0.1.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "npm-run-all2": "^6.2.2",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
