@@ -33,7 +33,7 @@ export default function App() {
       <p className="my-4">
         Change
         {' '}
-        <code className="border-1 2py-1 rounded border border-yellow-500 bg-neutral-100 px-1 font-mono text-yellow-500 dark:border-yellow-400 dark:bg-neutral-700 dark:text-yellow-400">
+        <code className="rounded border border-yellow-500 bg-neutral-100 px-1 font-mono text-yellow-500 dark:border-yellow-400 dark:bg-neutral-700 dark:text-yellow-400">
           src/App.tsx
         </code>
         {' '}
