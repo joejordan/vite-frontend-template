@@ -3,6 +3,10 @@
 coverage/
 dist/
 
+# IDEs
+/.idea/
+/.vscode/launch.json
+
 # files
 .eslintcache
 .pnpm-debug.log
@@ -10,4 +14,16 @@ tsconfig.tsbuildinfo
 
 # environment variable files
 .env
+.env.local
+.env.development
 .env.test
+.env.production
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+file_list.txt
+flatten.sh
+flattened_project.txt
+generate_flatten_list.sh
