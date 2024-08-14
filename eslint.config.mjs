@@ -57,6 +57,13 @@ export default antfu({
     'style/arrow-parens': ['error', 'always'],
     'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
     'style/quote-props': 'off',
+    'ts/consistent-type-definitions': 'off',
+    'ts/no-misused-promises': [
+      'error',
+      {
+        'checksVoidReturn': false,
+      },
+    ],
     'no-console': 'off',
     'import/order': [
       'warn',
