@@ -38,7 +38,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "vite": "^5.4.5",
-    "vitest": "^2.1.0"
+    "vitest": "^2.1.1"
   },
   "scripts": {
     "build": "vite build",
@@ -50,7 +50,7 @@
     "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
     "vitest:run": "vitest run",
-    "bump:patch": "pnpm version patch --no-git-tag-version -m \"chore(release): bump version to %s\"",
+    "bump:patch": "pnpm version patch -m \"chore(release): bump version to %s\"",
     "bump:minor": "pnpm version minor -m \"chore(release): bump version to %s\"",
     "bump:major": "pnpm version major -m \"chore(release): bump version to %s\"",
     "bump:push": "git push --follow-tags"
