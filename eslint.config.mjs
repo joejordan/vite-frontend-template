@@ -50,6 +50,7 @@ export default antfu({
           String.raw`^use[A-Z].*\.ts$`,
           'LICENSE',
           'README',
+          'CHANGELOG',
         ],
       },
     ],
