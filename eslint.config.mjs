@@ -1,6 +1,5 @@
 import antfu from '@antfu/eslint-config';
 import { FlatCompat } from '@eslint/eslintrc';
-import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 
 // workaround for flat config not being supported yet by eslint-plugin-tailwindcss
 // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/280
@@ -16,11 +15,28 @@ const customTailwindConfig = new FlatCompat().config({
 // To run the inspector, use `pnpx @eslint/config-inspector` in the root of the project.
 customTailwindConfig[0].name = 'tailwindcss/recommended';
 
-// customized unicorn config from the antfu eslint config to include recommended rules.
-const customUnicornConfig = {
-  ...eslintPluginUnicorn.configs['flat/recommended'],
+export default antfu({
+  stylistic: {
+    indent: 2,
+    quotes: 'single',
+    semi: true,
+    trailingComma: 'all',
+    arrowParens: 'always',
+    // more specific stylistic customizations are added in the global rules section below
+  },
+  unicorn: {
+    allRecommended: true,
+  },
   rules: {
-    ...eslintPluginUnicorn.configs['flat/recommended'].rules,
+    /**
+     * style rule customizations
+     */
+    'style/arrow-parens': ['error', 'always'],
+    'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+    'style/quote-props': 'off',
+    /**
+     * unicorn rule customizations
+     */
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/consistent-function-scoping': 'off',
     // ignore react hook-based filenames, LICENSE, and README
@@ -30,41 +46,20 @@ const customUnicornConfig = {
         case: 'kebabCase',
         ignore: [
           // This regex matches files that start with 'use' followed by an uppercase letter
-          // and then any sequence of characters, ending with '.ts'
+          // and then any sequence of characters, ending with '.ts'. Useful for React hooks.
           String.raw`^use[A-Z].*\.ts$`,
           'LICENSE',
           'README',
         ],
       },
     ],
-  },
-};
-
-export default antfu({
-  ignores: ['dist/', '**/dist/**/', 'coverage/', '**/coverage/**/'],
-  formatters: true,
-  react: true,
-  typescript: {
-    tsconfigPath: 'tsconfig.eslint.json',
-  },
-  stylistic: {
-    indent: 2,
-    quotes: 'single',
-    semi: true,
-    trailingComma: 'all',
-  },
-  rules: {
-    'style/arrow-parens': ['error', 'always'],
-    'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-    'style/quote-props': 'off',
-    'ts/consistent-type-definitions': 'off',
-    'ts/no-misused-promises': [
-      'error',
-      {
-        'checksVoidReturn': false,
-      },
-    ],
-    'no-console': 'off',
+    /**
+     * jsonc rule customizations
+     */
+    'jsonc/sort-keys': 'off',
+    /**
+     * import rule customizations
+     */
     'import/order': [
       'warn',
       {
@@ -113,9 +108,6 @@ export default antfu({
         },
       },
     ],
-    'jsonc/sort-keys': 'off',
-    'no-unused-vars': 'off',
-    'node/prefer-global/process': 'off',
     'unused-imports/no-unused-vars': [
       'warn',
       {
@@ -125,9 +117,36 @@ export default antfu({
         destructuredArrayIgnorePattern: '^_',
       },
     ],
+    /**
+     * node rule customizations
+     */
+    'node/prefer-global/process': 'off',
+    /**
+     * javascript rule customizations
+     */
+    'no-console': 'off',
+    'no-unused-vars': 'off',
+  },
+
+  /**
+   * TypeScript rule customizations
+   * Note: Typescript overrides must be put here rather than in the global rules scope.
+   * Reason unknown, but discussed here: https://github.com/antfu/eslint-config/issues/570
+   */
+  typescript: {
+    overrides: {
+      'ts/consistent-type-definitions': 'off',
+      'ts/no-misused-promises': 'off',
+    // disabling this rule customization for now, issue: https://github.com/antfu/eslint-config/issues/570#issuecomment-2349192906
+    //   'ts/no-misused-promises': [
+    //     'error',
+    //     {
+    //       'checksVoidReturn': false,
+    //     },
+    //   ],
+    },
   },
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
-}, ...customTailwindConfig)
-  .replace('antfu/unicorn/rules', customUnicornConfig);
+}, ...customTailwindConfig);
