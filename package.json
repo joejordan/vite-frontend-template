@@ -49,7 +49,11 @@
     "lint:fix": "eslint . --fix",
     "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
-    "vitest:run": "vitest run"
+    "vitest:run": "vitest run",
+    "bump:patch": "pnpm version patch --no-git-tag-version -m \"chore(release): bump version to %s\"",
+    "bump:minor": "pnpm version minor -m \"chore(release): bump version to %s\"",
+    "bump:major": "pnpm version major -m \"chore(release): bump version to %s\"",
+    "bump:push": "git push --follow-tags"
   },
   "browserslist": [
     ">0.2%",
