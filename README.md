@@ -15,7 +15,7 @@ A simple and fast frontend starter template with delicious defaults.
 
 - Press the "**Use this template**" button at the top of this repository's GitHub page.
 - Run `pnpm install` (get pnpm: https://pnpm.io/installation).
-- `pnpm dev` for development.
+- `pnpm start` for development.
 - Use `pnpm test` to run tests.
 - `pnpm build` for production builds.
 - `pnpm bump:[patch|minor|major]` for automatic version bumps with tagging.
