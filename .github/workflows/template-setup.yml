@@ -1,8 +1,8 @@
-name: Template Setup
+name: Template repository setup
 
 # The workflow will run when the "Use this template" button is used
 on:
-  create:
+  push:
 
 jobs:
   setup-template:
@@ -27,7 +27,7 @@ jobs:
 
       - name: 'Remove files not needed in the user''s copy of the template'
         run: |
-          rm -rf "./.github/scripts/"
+          rm -f "./.github/scripts/rename.sh"
           rm -f "./.github/workflows/template-setup.yml"
 
       - name: Add remove summary
