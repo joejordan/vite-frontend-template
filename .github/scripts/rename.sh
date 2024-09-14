@@ -17,12 +17,11 @@ jq --arg NAME "@$GITHUB_REPOSITORY" \
    --arg AUTHOR "$GITHUB_REPOSITORY_OWNER" \
    --arg URL "https://github.com/$GITHUB_REPOSITORY" \
    --arg DESCRIPTION "$GITHUB_REPOSITORY_DESCRIPTION" \
-   '.name = $NAME | 
-    .description = $DESCRIPTION | 
-    .author = $AUTHOR | 
+   '.name = $NAME |
+    .description = $DESCRIPTION |
+    .author.name = $AUTHOR |
+    .author.url = $URL |
     .repository.url = "git://" + $URL + ".git"' \
-   package.json
+   package.json > package.json.tmp && mv package.json.tmp package.json
 
-
-# Overwrite package.json
-echo "$JQ_OUTPUT" > package.json
+echo "package.json has been updated successfully."
