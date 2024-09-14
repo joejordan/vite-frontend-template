@@ -1,49 +1,28 @@
-# Starter Kit for Vite, React, TypeScript, Tailwind and Node.js ESM
+# Vite React Frontend Starter Template
 
-_Minimal, sensible defaults, fast._
+A simple and fast frontend starter template with delicious defaults.
 
-Template based off of [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template) tweaked with my own personal preferences.
-
-## Technologies
+## Tech Included
 
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind](https://tailwindcss.com/)
+- [ESLint]([https://](https://eslint.org/))
 - [pnpm](https://pnpm.io/ja/) (_Optional_)
 
-## Setup
+## Getting Started
 
-- Press the "Use this template" on the top of this repository's GitHub page.
-- Run `pnpm install` (or `npm install` if you don't use `pnpm`).
+- Press the "**Use this template**" button at the top of this repository's GitHub page.
+- Run `pnpm install` (get pnpm: https://pnpm.io/installation).
 - `pnpm dev` for development.
 - Use `pnpm test` to run tests.
 - `pnpm build` for production builds.
+- `pnpm bump:[patch|minor|major]` for automatic version bumps with tagging.
 
 _Note: You can install `pnpm` via `homebrew` on macOS: `brew install pnpm`._
 
-## Protips for the fastest Developer Experience
+## Credits
 
-- Use [`npm-run-all`](https://github.com/mysticatea/npm-run-all) to parallelize local test runs.
-- Prettier and eslint have `--cache` flags. Use them!
-- Do not run prettier inside of `eslint`. It commonly takes 50% of the eslint runtime!
-- Automatically sort imports when running prettier/saving the document via [`@ianvs/prettier-plugin-sort-imports`](https://github.com/ianvs/prettier-plugin-sort-imports).
-- Use `swc` with `ts-node` for fast node scripts with [ESM](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/). See below ↓
-
-## Run node scripts with ESM and TypeScript, fast
-
-Create a `script.ts` file, run `chmod x script.ts` and execute it via `./script.ts`.
-
-```text
-#!/usr/bin/env node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm
-
-console.log('Your code goes here.');
-```
-
-Use this to restart your scripts instantly when a file changes:
-
-```text
-#!/usr/bin/env NODE_ENV=development node --watch --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm
-
-console.log('This processes instantly restarts when a file changes.');
-```
+This template was originally based on [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template). This fork has been updated with my own personal preferences and a better
+eslint experience (thanks to [Antfu's ESLint Config](https://github.com/antfu/eslint-config)).
