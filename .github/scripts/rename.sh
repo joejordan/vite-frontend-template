@@ -13,14 +13,16 @@ echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
 echo "GITHUB_REPOSITORY_DESCRIPTION: $GITHUB_REPOSITORY_DESCRIPTION"
 
 # jq is like sed for JSON data
-JQ_OUTPUT=`jq \
-  --arg NAME "@$GITHUB_REPOSITORY" \
-  --arg AUTHOR_NAME "$GITHUB_REPOSITORY_OWNER" \
-  --arg URL "https://github.com/$GITHUB_REPOSITORY_OWNER" \
-  --arg DESCRIPTION "$GITHUB_REPOSITORY_DESCRIPTION" \
-  '.name = $NAME | .description = $DESCRIPTION | .author |= ( .name = $AUTHOR_NAME | .url = $URL )' \
-  package.json
-`
+jq --arg NAME "@$GITHUB_REPOSITORY" \
+   --arg AUTHOR "$GITHUB_REPOSITORY_OWNER" \
+   --arg URL "https://github.com/$GITHUB_REPOSITORY" \
+   --arg DESCRIPTION "$GITHUB_REPOSITORY_DESCRIPTION" \
+   '.name = $NAME | 
+    .description = $DESCRIPTION | 
+    .author = $AUTHOR | 
+    .repository.url = "git://" + $URL + ".git"' \
+   package.json
+
 
 # Overwrite package.json
 echo "$JQ_OUTPUT" > package.json

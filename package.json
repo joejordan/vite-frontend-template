@@ -1,7 +1,10 @@
 {
   "name": "@joejordan/vite-frontend-template",
   "version": "0.5.1",
-  "author": "Joe Jordan <github@ignitesoft.com>",
+  "author": {
+    "name": "Joe Jordan",
+    "url": "https://github.com/joejordan"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/joejordan/vite-frontend-template.git"
