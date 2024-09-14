@@ -138,13 +138,16 @@ export default antfu({
     overrides: {
       'ts/consistent-type-definitions': 'off',
       'ts/no-misused-promises': 'off',
-    // disabling this rule customization for now, issue: https://github.com/antfu/eslint-config/issues/570#issuecomment-2349192906
-    //   'ts/no-misused-promises': [
-    //     'error',
-    //     {
-    //       'checksVoidReturn': false,
-    //     },
-    //   ],
+    },
+    // discussion that necessitated this workaround:
+    // https://github.com/antfu/eslint-config/issues/570#issuecomment-2349192906
+    overridesTypeAware: {
+      'ts/no-misused-promises': [
+        'error',
+        {
+          'checksVoidReturn': false,
+        },
+      ],
     },
   },
   parserOptions: {
