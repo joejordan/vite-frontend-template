@@ -1,5 +1,6 @@
 {
   "name": "@joejordan/vite-frontend-template",
+  "description": "Vite frontend starter template with delicious defaults",
   "version": "0.5.1",
   "author": {
     "name": "Joe Jordan",
