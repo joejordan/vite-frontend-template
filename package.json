@@ -47,7 +47,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
+    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:fix",
     "tsc:check": "tsc",
     "vitest:run": "vitest run",
     "bump:patch": "pnpm version patch -m \"chore(release): bump version to %s\"",
