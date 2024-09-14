@@ -21,7 +21,7 @@ jq --arg NAME "@$GITHUB_REPOSITORY" \
     .description = $DESCRIPTION |
     .author.name = $AUTHOR |
     .author.url = $URL |
-    .repository.url = "git://" + $URL + ".git"' \
+    .repository.url = "git+" + $URL + ".git"' \
    package.json > package.json.tmp && mv package.json.tmp package.json
 
 echo "package.json has been updated successfully."
